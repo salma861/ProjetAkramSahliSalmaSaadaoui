@@ -12,6 +12,7 @@ import { Error404Component } from './error404/error404.component';
 import { ModifierParfumComponent } from './modifier-parfum/modifier-parfum.component';
 import { AjouterparfumComponent } from './ajouterparfum/ajouterparfum.component';
 import { MonpipePipe } from './monpipe.pipe';
+import { AuthentificationComponent } from './authentification/authentification.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MonpipePipe } from './monpipe.pipe';
     Error404Component,
     ModifierParfumComponent,
     AjouterparfumComponent,
-    MonpipePipe
+    MonpipePipe,
+    AuthentificationComponent
   ],
   imports: [
     BrowserModule,

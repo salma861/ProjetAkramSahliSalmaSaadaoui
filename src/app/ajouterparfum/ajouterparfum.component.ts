@@ -34,7 +34,7 @@ export class AjouterparfumComponent implements OnInit {
       this.type,this.taille,this.prix,this.promotion,this.prixavantpromo,this.datefabrication,
       this.image);
     if(ajout)
-      this.message="Votre noouvelle parfum:" +this.nom+ " a bien été ajouté";
+      this.message="Votre nouvelle parfum:" +this.nom+ " a bien été ajouté";
     else
       this.message="Le produit d'id "+ this.id+" existe déjà !";
   }

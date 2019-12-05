@@ -1,6 +1,7 @@
 
 <nav class="navbar navbar-light bg-light ">
-  <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" [(ngModel)]="recherche" (input)="Search()" style="width: 500px;">
+  <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" 
+  [(ngModel)]="recherche" (input)="Search()" style="width: 500px;">
 </nav>
 <div *ngFor="let p of parfum ; let indice=index " class="card mb-3 p-3" style="max-width: 1000px;">
     <div class="row no-gutters">

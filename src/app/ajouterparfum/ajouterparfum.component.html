@@ -4,19 +4,28 @@
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
             <label for="id">Identifiant du parfum</label>
-            <input type="text" id="id" name="id" [(ngModel)]="id"  class="form-control" required #identif="ngModel" >
+            <input type="text" id="id" name="id" [(ngModel)]="id"  class="form-control" 
+            required #identif="ngModel" >
         </div>
         <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger">
             L'identifiant est obligatoire
         </div>
         <div class="form-group">
             <label for="marque">marque du parfum </label>
-            <input type="text" id="marque" name="mar"[(ngModel)]="nommarque" class="form-control" required>
+            <input type="text" id="marque" name="mar"[(ngModel)]="nommarque" class="form-control" 
+            pattern="[A-Z].{1,}" required #marque="ngModel">
+        </div>
+        <div *ngIf="marque.errors?.pattern && marque.dirty" class="alert alert-danger">
+            Le nom de la marque doit commencer par une majuscule suivie d'au moins 1 caractère 
         </div>
         <div class="form-group">
             <label for="nom">nom du parfum</label>
-            <input type="string" id="nom" name="nm" [(ngModel)]="nom"  class="form-control" required>
+            <input type="string" id="nom" name="nm" [(ngModel)]="nom"  class="form-control"
+            required pattern="[A-Z].{1,}" #nomm="ngModel">
         </div>   
+        <div *ngIf="nomm.errors?.pattern && nomm.dirty" class="alert alert-danger">
+            Le nom doit commencer par une majuscule suivie d'au moins 1 caractère 
+        </div>
         <div class="form-group">
             <label for="categorie">categorie du parfum </label>
             <select id="categorie" name="cat"[(ngModel)]="categorie" class="form-control">
@@ -51,17 +60,17 @@
         </div>
         <div class="form-group">
             <label for="datefabrication">date fabrication  du parfum</label>
-            <input type="string" id="datefabrication" name="dt" [(ngModel)]="datefabrication"  class="form-control" required #dt="ngModel" >
+            <input type="string" id="datefabrication" name="dt" [(ngModel)]="datefabrication"  class="form-control" required>
         </div>
         <div class="form-group">
             <label for="image">image  du parfum</label>
             <input type="string" id="image" name="im" [(ngModel)]="image"  class="form-control" required #im="ngModel" >
-        </div>     
-        <button type="submit" class="btn btn-success" [disabled]="f.invalid">ajouter</button>
-        <input type="reset" class="btn btn-danger" (click)="f.reset();" value="Vider"/>
+        </div> 
         <div [hidden] ="!submitted">
             {{message}}
-        </div>
+        </div>    
+        <button type="submit" class="btn btn-success" [disabled]="f.invalid">ajouter</button>
+        <input type="reset" class="btn btn-danger" (click)="f.reset();" value="Vider"/>
     </form>
 </div> 
 

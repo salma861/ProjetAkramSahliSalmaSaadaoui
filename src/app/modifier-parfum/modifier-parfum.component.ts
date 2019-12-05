@@ -19,6 +19,8 @@ export class ModifierParfumComponent implements OnInit {
   prixavantpromo:number=0;
   datefabrication:string="";
   image:string="";
+  message ="";
+  submitted:boolean = false;
   constructor( private activatedRoute:ActivatedRoute , private Parfum:ParfumsService ) { }
 
   ngOnInit() {
@@ -27,6 +29,8 @@ export class ModifierParfumComponent implements OnInit {
   }
 
   onSubmit(f:NgForm,indice:number){
+    this.submitted =true;
+
   if(this.categorie==""){
     this.categorie=this.parfum[indice].categorie;
   }
@@ -50,5 +54,8 @@ export class ModifierParfumComponent implements OnInit {
   }
   this.Parfum.modifier(indice,this.categorie,this.type,this.taille,this.prix,this.promotion,
     this.prixavantpromo,this.datefabrication,this.image);
+    if(this.submitted){
+      this.message="Votre parfum:" +this.parfum[indice].nom+ " a bien été modifié";
+    }
   }
 }

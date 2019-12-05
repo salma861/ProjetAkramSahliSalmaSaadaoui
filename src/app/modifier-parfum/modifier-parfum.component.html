@@ -8,10 +8,6 @@
             <option value="enfant">enfant</option>
         </select>
     </div> 
-    <!--<label for="categorie" class="col-sm-2 col-form-label mb-3">Catégorie</label>
-    <div class="col-sm-10">
-    <input type="text" id="categorie" name="categorie" class="form-control" [(ngModel)]='categorie' placeholder="{{p.categorie}}"/>
-    </div>-->
     <label for="type" class="col-sm-2 col-form-label mb-3">type</label>
     <div class="col-sm-10">    
         <select id="type" name="ty" [(ngModel)]="type" class="form-control" >
@@ -20,17 +16,13 @@
             <option value="parfum">parfum</option>
         </select>
     </div> 
-    <!--<label for="type" class="col-sm-2 col-form-label mb-3">Type</label>
-    <div class="col-sm-10">
-    <input type="text" id="type" name="type" class="form-control" [(ngModel)]='type' placeholder="{{p.type}}"/>       
-    </div>-->
     <label for="taille" class="col-sm-2 col-form-label mb-3">Taille</label>
     <div class="col-sm-10">
-    <input type="number" id="taille" name="taille" class="form-control" [(ngModel)]='taille' placeholder="{{p.taille}}"/>       
+    <input type="number" id="taille" name="taille" class="form-control" [(ngModel)]='taille'/>       
     </div>
     <label for="prix" class="col-sm-2 col-form-label mb-3">Prix</label>
     <div class="col-sm-10">
-    <input type="number" id="prix" name="prix" class="form-control" [(ngModel)]='prix' placeholder="{{p.prix}}"/>       
+    <input type="number" id="prix" name="prix" class="form-control" [(ngModel)]='prix'/>       
     </div>
     <div class="form-check col-sm-12 mb-3">
     <input class="form-check-input" type="checkbox" id="p" name="promotion" [(ngModel)]='promotion'>
@@ -39,17 +31,20 @@
     <ng-container *ngIf="promotion">
     <label for="prixavantpromo" class="col-sm-2 col-form-label mb-3">Prix avant la promotion</label>
     <div class="col-sm-10">
-    <input type="number" id="prixavantpromo" name="prixavantpromo" class="form-control" [(ngModel)]='prixavantpromo' placeholder="{{p.prixAvantPromo}}"/>       
+    <input type="number" id="prixavantpromo" name="prixavantpromo" class="form-control" [(ngModel)]='prixavantpromo'/>       
     </div>
     </ng-container>
     <label for="datefabrication" class="col-sm-2 col-form-label mb-3">La date de fabrication</label>
     <div class="col-sm-10">
-    <input type="date" id="datefabrication" name="datefabrication" class="form-control" [(ngModel)]='datefabrication' placeholder="{{p.datefabrication}}"/>       
+    <input type="date" id="datefabrication" name="datefabrication" class="form-control" [(ngModel)]='datefabrication'/>       
     </div>
     <label for="photo" class="col-sm-2 col-form-label mb-3">L'url de l'image</label>
     <div class="col-sm-10">
-    <input type="text" id="photo" name="photo" class="form-control" [(ngModel)]='image' placeholder="{{p.photo}}"/>       
+    <input type="text" id="photo" name="photo" class="form-control" [(ngModel)]='image'/>       
     </div>
+    <div [hidden] ="!submitted">
+        {{message}}
+    </div>  
     <button [disabled]="f.invalid" class="btn btn-success ml-5">enregister</button>
     <button type="reset" (click)='Vider()' class="btn btn-danger ml-5">Vider</button>
 </form>

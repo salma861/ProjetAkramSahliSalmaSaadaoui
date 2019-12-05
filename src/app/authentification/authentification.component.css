@@ -1,0 +1,60 @@
+input.ng-valid{
+    border-left: 2px solid green;
+}
+
+input.ng-invalid{
+    border-left: 2px solid red;
+}
+
+
+.c1{
+    background-color:white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 200px;
+}
+
+
+.c {
+    
+   
+    background-color:white;
+    padding-top: 10px;
+    width: 40%;
+    position: fixed;
+    
+    top: 0;
+
+    
+}
+
+
+
+
+
+
+
+    .c2{
+        margin-top: 10%;
+    }
+
+    
+
+
+    .c3{
+        margin-left: 40%; 
+    }
+
+
+
+    
+
+    
+
+
+
+.c4{
+    margin-top: 15%;
+
+}

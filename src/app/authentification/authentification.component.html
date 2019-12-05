@@ -1,0 +1,42 @@
+<div class="c1"></div>
+<div class="c">
+	<div class="c4">
+		<img src="../assets/securite.jpg" class="d-block w-100" alt="...">
+	</div>
+ </div>
+<div class="c3">
+	<div class="col-md-6 col-sm-12">
+	   <div class="c2">
+		  <form name="f" (ngSubmit)="onSubmit(f)" #f="ngForm">
+			 <div class="form-group">
+				<label>User Name</label><img src="/assets/person-fill.svg" width="20" height="20" >
+                <input type="text" id="us" name="us" pattern="[A-Z][a-zA-Z]+" 
+                [(ngModel)]="us" required #nom="ngModel" class="form-control" placeholder="User Name">
+			 </div>
+			 <div *ngIf="nom.errors?.pattern && nom.dirty" class="alert alert-danger">
+                Le login doit commencer par une majuscule suivie d'au moins 1 caractère 
+            </div>
+			 <div class="form-group">
+				<label>Password</label><img src="/assets/lock-fill.svg" width="20" height="20">
+                <input type="password" id="mdp" class="form-control" pattern="[A-Z][a-zA-Z]+"
+                [(ngModel)]="mdp" #pass="ngModel" name="mdp" required placeholder="Password">{{mdp}}
+			 </div>
+			 <div *ngIf="pass.errors?.pattern && pass.dirty" class="alert alert-danger">
+                Le mots de pass doit commencer par une majuscule suivie d'au moins 1 caractère 
+            </div>
+			
+			<input type="submit" #yikes [routerLink]="['/accueil']" [disabled]="f.invalid || onSubmit()==false " class="btn btn-success" value="Login"/>
+		
+			<button type="reset" class="btn btn-secondary">Vider</button>
+			<ng-container *ngIf="onSubmit()==false">
+			 
+			 
+			</ng-container>
+	
+		  </form>
+		  
+	   </div>
+	</div>
+ </div>
+ 
+
